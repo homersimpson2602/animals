@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap');
+@import url("/sb-menu/menu.scss");
+@import url("/header-menu/header-menu.scss");
+@import url("/animal-info/animal-info.scss");
+@import url("/animals-list/animals-list.scss");
+
+
+
+// Переменные
+$main-background: rgb(253, 219, 25);
+$secondary-background: rgb(255, 230, 91);
+// ==========================================
+
+// Миксины
+@mixin large-text {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+// ==========================================
+
+//   font-family: 'Roboto Condensed', sans-serif;
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;
+  background-color: #000;
+  display: grid;
+  grid-template-areas: 
+    "header header header"
+    "nav content content"
+    "footer footer footer";
+  grid-template-rows: 60px 1fr 60px;
+  grid-template-columns: 20% 1fr 1fr;
+  grid-gap: 10px;
+  height: 100vh;
+  
+}
+
+header, footer, section, nav {
+  background-color: $main-background;
+  box-sizing: border-box;
+} 
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-evenly;
+
+  .logo {
+    max-width: 60px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.sidebar-nav {
+  grid-area: nav;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  padding-top: 20px;
+  
+  .copyright {
+    color: rgba(0,0,0, .3)
+  }
+}
+
+section {
+  grid-area: content;
+  display: grid;
+  // grid-template-areas: 
+  //   "animal-info animals-list";
+  grid-template-columns: 40% 60%;  
+  grid-template-rows: 1fr;  
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 575px) {
+  body {
+    grid-template-areas: 
+      "header"
+      "content"
+      "nav"
+      "footer";
+
+    grid-template-rows: 80px 1fr 20% 80px;
+    grid-template-columns: 1fr;
+  }
+}
