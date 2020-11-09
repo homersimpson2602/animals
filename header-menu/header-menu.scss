@@ -5,8 +5,8 @@
 
 .header-nav {
   display: grid;
-  grid-template-rows: 1fr;
   gap: 10px;
+  grid-template-rows: 1fr;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));  
   padding: 0px;
   height: 60px;
@@ -20,16 +20,19 @@
     @include large-text();
     padding: 10px;
     padding-top: 20px;
-    transition: padding-top .2s ease-out;
-    transition: background-color .2 ease-out;
+    transition: all .2s ease-out;
     text-align: center;
 
 
     &:hover {
       background-color: #fff;
       padding-top: 38px;
-
       cursor: pointer;
     }
+
+    &--checked {
+      background-color: #fff;
+      padding-top: 38px;
+    } 
   }
 }
